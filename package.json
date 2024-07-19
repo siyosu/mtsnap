@@ -1,16 +1,22 @@
 {
   "name": "mtsnap",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "Unofficial Midtrans snap payment API client for node",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "vitest",
     "format": "prettier . --write",
     "typecheck": "tsc",
     "build": "tsup src/index.ts --format cjs,esm --minify --dts"
   },
+  "repository": "https://github.com/siyosu/mtsnap",
+  "bugs": "https://github.com/siyosu/mtsnap/issues",
+  "homepage": "https://github.com/siyosu/mtsnap#readme",
   "keywords": [
     "midtrans",
     "api",
