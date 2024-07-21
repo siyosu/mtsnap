@@ -44,4 +44,4 @@ const snap = new Snap({ isProduction: false, serverKey: process.env.SERVER_KEY }
 | `.createTransaction()` | Create new transaction                                    |
 | `.status()`            | Get transaction status                                    |
 | `.isRefunded()`        | Type guard to check if the transaction status is refunded |
-| `.notificaction()`     | Verify notification from midtrans                         |
+| `.notification()`      | Verify notification from midtrans                         |
