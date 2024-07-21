@@ -152,13 +152,13 @@ export class Snap {
    * For Snap payment, Midtrans won't let you check the status of the payment until the user selects the payment method.
    * You will need to handle the status recheck yourself.
    */
-  async notification(body: Record<string, any>, recheck: boolean = true) {
+  async notification(body: Record<string, any>) {
     const { order_id, status_code, gross_amount } = body;
     const signatureKey = crypto
       .createHash("sha512")
       .update(order_id + status_code + gross_amount + this.serverKey)
       .digest("hex");
     if (signatureKey !== body.signature_key) throw new MidtransError({ message: "Failed to verify signature key" });
-    return body;
+    return body as TransactionStatusSuccessResponse;
   }
 }
